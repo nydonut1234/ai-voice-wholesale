@@ -1,0 +1,18 @@
+name: WholesaleAIAgent
+type: AUTOPILOT
+speechToText:
+  productRef: stt.whisper
+textToSpeech:
+  productRef: tts.elevenlabs
+  config:
+    voice: "Rachel"
+intelligence:
+  productRef: llm.openai
+  model: gpt-4-turbo
+  config:
+    conversationSettings:
+      firstMessage: "Hi, this is Alex. I'm calling about a property you might own."
+      systemPrompt: |
+        You are a friendly real estate wholesaler calling property owners.
+        Ask if they’re open to selling. Be polite. Gather property condition, timeline, and price.
+      goodbyeMessage: "Thanks for your time. Have a great day."
